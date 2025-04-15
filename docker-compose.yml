@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres-db:
+    image: postgres:17
+    container_name: challenge-postgres
+    environment:
+      POSTGRES_USER: challenge_user
+      POSTGRES_PASSWORD: challenge1234
+      POSTGRES_DB: challenge
+    ports:
+      - "5432:5432"
+    volumes:
+      - challenge_db_data:/var/lib/postgresql/data
+
+volumes:
+  challenge_db_data:
